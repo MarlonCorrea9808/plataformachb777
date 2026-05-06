@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: url('https://images.unsplash.com/photo-1597002973503-7f6c8a3c1d63') no-repeat center center/cover;
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  background: rgba(0,0,0,0.8);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #00ff88;
+}
+
+/* BANNER */
+.banner {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(0,0,0,0.6);
+}
+
+.banner h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.banner button {
+  padding: 15px 30px;
+  background: #00ff88;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.banner button:hover {
+  background: #00cc6a;
+}
+
+/* GAMES */
+.games {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.card {
+  background: rgba(0,0,0,0.8);
+  margin: 15px;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,255,136,0.5);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #00ff88;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #00cc6a;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.8);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  .banner h2 {
+    font-size: 28px;
+  }
+
+  .games {
+    flex-direction: column;
+    align-items: center;
+  }
+}
