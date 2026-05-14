@@ -1,52 +1,481 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHBET777</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Borracharia Malta</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#050505;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(0,0,0,.85);
+      backdrop-filter:blur(8px);
+      z-index:1000;
+      border-bottom:2px solid #ff0000;
+      box-shadow:0 0 15px rgba(255,0,0,.5);
+    }
+
+    .nav-logo{
+      color:#ff0000;
+      font-size:28px;
+      font-weight:bold;
+      text-shadow:0 0 10px #ff0000;
+    }
+
+    .menu{
+      display:flex;
+      gap:25px;
+    }
+
+    .menu a{
+      color:white;
+      text-decoration:none;
+      font-size:18px;
+      transition:.3s;
+      font-weight:bold;
+    }
+
+    .menu a:hover{
+      color:#ffcc00;
+      text-shadow:0 0 10px #ffcc00;
+    }
+
+    header{
+      width:100%;
+      min-height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+      url('https://images.unsplash.com/photo-1486006920555-c77dcf18193c?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .logo{
+      width:160px;
+      margin-bottom:25px;
+      filter:drop-shadow(0 0 20px #ff0000);
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+      }
+      50%{
+        transform:scale(1.08);
+      }
+      100%{
+        transform:scale(1);
+      }
+    }
+
+    .hero{
+      transform-style:preserve-3d;
+      animation:hero3d 5s ease-in-out infinite;
+    }
+
+    @keyframes hero3d{
+      0%{
+        transform:rotateX(0deg) rotateY(0deg);
+      }
+      50%{
+        transform:rotateX(2deg) rotateY(2deg);
+      }
+      100%{
+        transform:rotateX(0deg) rotateY(0deg);
+      }
+    }
+
+    .hero h1{
+      font-size:80px;
+      color:#ff0000;
+      text-shadow:
+      0 0 10px #ff0000,
+      0 0 20px #ff0000,
+      0 0 40px #ff0000;
+      margin-bottom:20px;
+      animation:neon 2s infinite alternate;
+    }
+
+    @keyframes neon{
+      from{
+        text-shadow:
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
+        0 0 40px #ff0000;
+      }
+      to{
+        text-shadow:
+        0 0 20px #ff0000,
+        0 0 40px #ff0000,
+        0 0 80px #ff0000;
+      }
+    }
+
+    .hero p{
+      font-size:24px;
+      margin-bottom:30px;
+      color:#f1f1f1;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:#25d366;
+      color:white;
+      text-decoration:none;
+      border-radius:50px;
+      font-size:20px;
+      font-weight:bold;
+      transition:.3s;
+      box-shadow:0 0 20px #25d366;
+    }
+
+    .btn:hover{
+      transform:scale(1.1) translateY(-5px);
+      box-shadow:0 0 35px #25d366;
+    }
+
+    section{
+      padding:80px 8%;
+    }
+
+    .title{
+      font-size:45px;
+      color:#ffcc00;
+      margin-bottom:50px;
+      text-align:center;
+      text-shadow:0 0 15px #ffcc00;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      position:relative;
+      transform-style:preserve-3d;
+      perspective:1000px;
+      background:#111;
+      border:2px solid #ff0000;
+      border-radius:20px;
+      overflow:hidden;
+      transition:.4s;
+      box-shadow:0 0 15px rgba(255,0,0,.4);
+    }
+
+    .card:hover{
+      transform:translateY(-10px) rotateY(8deg) rotateX(8deg) scale(1.03);
+      box-shadow:0 0 25px rgba(255,0,0,.9);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+      text-align:center;
+    }
+
+    .card-content h3{
+      color:#ffcc00;
+      margin-bottom:10px;
+      font-size:26px;
+    }
+
+    .card-content p{
+      color:#ccc;
+      margin-bottom:15px;
+    }
+
+    .price{
+      font-size:28px;
+      color:#25d366;
+      font-weight:bold;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .service-box{
+      transform-style:preserve-3d;
+      transition:.4s;
+      background:#111;
+      padding:35px;
+      border-radius:20px;
+      text-align:center;
+      border:2px solid #ffcc00;
+      box-shadow:0 0 20px rgba(255,204,0,.4);
+    }
+
+    .service-box:hover{
+      transform:rotateY(8deg) rotateX(8deg) translateY(-10px);
+      box-shadow:0 0 35px rgba(255,204,0,.8);
+    }
+
+    .service-box h3{
+      margin-top:15px;
+      margin-bottom:15px;
+      color:#ffcc00;
+      font-size:28px;
+    }
+
+    .service-box p{
+      color:#ddd;
+      line-height:1.6;
+    }
+
+    .location{
+      text-align:center;
+      background:#0c0c0c;
+      border-top:3px solid #ff0000;
+      border-bottom:3px solid #ff0000;
+    }
+
+    .location p{
+      font-size:22px;
+      margin-top:20px;
+      color:#ddd;
+    }
+
+    footer{
+      padding:40px;
+      text-align:center;
+      background:black;
+      color:#aaa;
+      border-top:2px solid #ff0000;
+    }
+
+    footer h2{
+      color:#ff0000;
+      margin-bottom:15px;
+      text-shadow:0 0 15px #ff0000;
+    }
+
+    .social{
+      margin-top:20px;
+    }
+
+    .social a{
+      color:white;
+      margin:0 10px;
+      font-size:22px;
+      text-decoration:none;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:48px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .title{
+        font-size:35px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+        padding:15px;
+      }
+
+      .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+      }
+
+      .menu a{
+        font-size:15px;
+      }
+
+      .logo{
+        width:120px;
+      }
+
+      .btn{
+        font-size:16px;
+        padding:12px 25px;
+      }
+
+      .card:hover,
+      .service-box:hover{
+        transform:none;
+      }
+    }
+    }
+  </style>
 </head>
-<body>
+<body id="topo">
+
+  <nav>
+    <div class="nav-logo">BORRACHARIA MALTA</div>
+
+    <div class="menu">
+      <a href="#topo">HOME</a>
+      <a href="#pneus">PNEUS</a>
+      <a href="#seminovos">SEMINOVOS</a>
+      <a href="#localizacao">LOCALIZAÇÃO</a>
+      <a href="https://wa.me/5551981415593" target="_blank">WHATSAPP</a>
+    </div>
+  </nav>
 
   <header>
-    <h1>CHBET777</h1>
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Jogos</a>
-      <a href="#">Depósito</a>
-      <a href="#">Saque</a>
-    </nav>
+    <div class="hero">
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="Logo Borracharia Malta" class="logo">
+      <h1>BORRACHARIA MALTA</h1>
+      <p>
+        Especializada em Pneus Novos e Seminovos • Melhor preço de Porto Alegre
+      </p>
+
+      <a class="btn" href="https://wa.me/5551981415593" target="_blank">
+        CHAMAR NO WHATSAPP
+      </a>
+    </div>
   </header>
 
-  <section class="banner">
-    <h2>Bem-vindo à CHBET777</h2>
-    <p>A sua banca começa aqui 🔥</p>
-    <button>Jogar Agora</button>
+  <section id="pneus">
+    <h2 class="title">PNEUS EM PROMOÇÃO</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop">
+        <div class="card-content">
+          <h3>Pneu Aro 13</h3>
+          <p>Pneus novos e seminovos com garantia.</p>
+          <div class="price">R$ 249,90</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop">
+        <div class="card-content">
+          <h3>Pneu Aro 15</h3>
+          <p>Alta performance e segurança.</p>
+          <div class="price">R$ 399,90</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?q=80&w=1200&auto=format&fit=crop">
+        <div class="card-content">
+          <h3>Pneus Seminovos Premium</h3>
+          <p>Pneus revisados com qualidade e excelente durabilidade.</p>
+          <div class="price">A PARTIR R$ 199,90</div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
-  <section class="games">
-    <div class="card">
-      <h3>🎰 Slot Favela</h3>
-      <p>Multiplique sua sorte!</p>
-      <button>Jogar</button>
-    </div>
+  <section id="seminovos">
+    <h2 class="title">CATÁLOGO COMPLETO</h2>
 
-    <div class="card">
-      <h3>⚽ Aposta Esportiva</h3>
-      <p>Aposte nos jogos ao vivo</p>
-      <button>Entrar</button>
-    </div>
+    <div class="cards">
 
-    <div class="card">
-      <h3>💣 Crash</h3>
-      <p>Retire antes de explodir</p>
-      <button>Jogar</button>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=1200&auto=format&fit=crop">
+        <div class="card-content">
+          <h3>Pneu Aro 14</h3>
+          <p>Pneus reforçados para cidade e estrada.</p>
+          <div class="price">R$ 329,90</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop">
+        <div class="card-content">
+          <h3>Pneu Aro 17</h3>
+          <p>Alta aderência e visual esportivo.</p>
+          <div class="price">R$ 599,90</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop">
+        <div class="card-content">
+          <h3>Pneus SUV</h3>
+          <p>Pneus resistentes para SUV e caminhonete.</p>
+          <div class="price">R$ 749,90</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop">
+        <div class="card-content">
+          <h3>Pneu Importado</h3>
+          <p>Modelos importados novos com alta performance.</p>
+          <div class="price">R$ 699,90</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1611016186353-9af58c69a533?q=80&w=1200&auto=format&fit=crop">
+        <div class="card-content">
+          <h3>Pneus Econômicos</h3>
+          <p>Ótimo custo-benefício para o dia a dia.</p>
+          <div class="price">R$ 289,90</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?q=80&w=1200&auto=format&fit=crop">
+        <div class="card-content">
+          <h3>Pneus Caminhonete</h3>
+          <p>Pneus reforçados para SUV e utilitários.</p>
+          <div class="price">R$ 849,90</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 CHBET777 - Todos os direitos reservados</p>
-  </footer>
+  <section>
+    <h2 class="title">POR QUE COMPRAR NA MALTA?</h2>
 
-</body>
-</html>
+    <div class="services">
+
+      <div class="service-box">
+        <h3>Troca de Pneus</h3>
+        <p>Serviço rápido e profissional para carros e motos.
